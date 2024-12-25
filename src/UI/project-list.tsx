@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { ProjectTitle } from "./typography"
+import Image from "next/image"
 
 export default function ProjectsList() {
 
@@ -13,11 +14,11 @@ export default function ProjectsList() {
   ]
 
   return (
-    <ul className="grid grid-cols-4 gap-3">
+    <ul className="grid grid-cols-4 gap-4">
       {projects.map(item => (
         <li key={item.id} className="rounded-xl bg-slate-200 dark:bg-black p-2 shadow-xl duration-300 transition-transform hover:-translate-y-2">
           <Link href={`/projects/${item.id}?data=${encodeURIComponent(JSON.stringify(item))}`}>
-            <img src={item.src} alt={item.title} className="w-full object-contain rounded-lg mb-5" />
+            <Image src={item.src} alt={item.title} className="w-full object-contain rounded-lg mb-5" width={300} height={220} />
             <ProjectTitle label={item.title} />
           </Link>
         </li>

@@ -1,7 +1,5 @@
-import Footer from "@/components/footer";
 import Hero from "@/components/main/hero";
 import Skills from "@/components/main/skills";
-
 
 export default function Home() {
   return (

@@ -1,15 +1,13 @@
 
-export default async function Project ({params}:{params: {id: number}}) {
+export default async function Project () {
 
-  const {id} = await params
   
-  console.log(id)
 
   return (
     <main>
       <section>
         <div className="container">
-          {id}
+          123
         </div>
       </section>
     </main>

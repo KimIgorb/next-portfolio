@@ -1,6 +1,7 @@
 'use client'
 
 import clsx from 'clsx'
+import Image from 'next/image'
 import React from 'react'
 
 const BtnDarkMode = () => {
@@ -26,8 +27,8 @@ const BtnDarkMode = () => {
       )}
       onClick={toggleDarkMode}
     >
-      <img src='./sun.svg' alt="Light mode" className="relative z-10" />
-      <img src='./moon.svg' alt="Dark mode" className="relative z-10" />
+      <Image width={16} height={16} src='./sun.svg' alt="Light mode" className="relative z-10" />
+      <Image width={16} height={16} src='./moon.svg' alt="Dark mode" className="relative z-10" />
     </button>
   )
 }
