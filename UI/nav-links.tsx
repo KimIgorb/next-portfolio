@@ -15,7 +15,7 @@ export default function NavLinks() {
 
   return (
     <nav>
-      <ul className="flex items center gap-7 mr-7">
+      <ul className="flex items center gap-7">
         {navItems.map(item => (
           <li key={item.href} className="relative w-max">
             <Link

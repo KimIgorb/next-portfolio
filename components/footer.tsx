@@ -1,5 +1,5 @@
-import SocialList from "@/UI/social-list";
-import { Paragraph } from "@/UI/typography";
+import SocialList from "../UI/social-list";
+import { Paragraph } from "../UI/typography";
 
 export default function Footer() {
   return (

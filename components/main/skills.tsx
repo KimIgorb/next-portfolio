@@ -1,4 +1,4 @@
-import { Subtitle, Paragraph } from "@/UI/typography";
+import { Subtitle, Paragraph } from "../../UI/typography";
 
 export default function Skills() {
   return (

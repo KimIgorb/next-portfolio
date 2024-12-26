@@ -1,4 +1,4 @@
-import { Paragraph } from "@/UI/typography";
+import { Paragraph } from "../../UI/typography";
 
 export default function Hero() {
   return (
@@ -15,7 +15,8 @@ export default function Hero() {
               with passion for learning and creating.
             </Paragraph>
             <a
-              href="#!"
+              href="/CV.pdf"
+              download
               className="inline-block h-12 py-3 px-7 bg-purple font-medium tracking-wide rounded-md hover:opacity-80 active:top-px active:relative"
             >Download CV</a>
           </div>
