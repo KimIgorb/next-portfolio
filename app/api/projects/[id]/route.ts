@@ -1,14 +1,15 @@
 import { NextResponse } from "next/server";
 import { prisma } from "../../../../prisma/prisma-client";
 
-export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
-  const { id } = params;
+interface Context {
+  params: { id: string };
+}
+
+export async function GET(request: Request, context: Context) {
+  const { id } = context.params;
 
   const project = await prisma.projects.findUnique({
-    where: { id: parseInt(id) }
+    where: { id: parseInt(id) },
   });
 
   if (!project) {
