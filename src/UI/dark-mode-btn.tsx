@@ -10,7 +10,8 @@ export default function BtnDarkMode() {
 
   React.useEffect(() => {
     async function fetchTheme() {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/theme`);
+      const url = process.env.NEXT_PUBLIC_API_URL || 'https://next-portfolio-sigma-jade.vercel.app'
+      const response = await fetch(`${url}/api/theme`);
       const data = await response.json();
       setMode(data.mode);
       if (data.mode === 'dark') {
@@ -23,9 +24,10 @@ export default function BtnDarkMode() {
   }, []);
 
   const toggleDarkMode = async () => {
+    const url = process.env.NEXT_PUBLIC_API_URL || 'https://next-portfolio-sigma-jade.vercel.app'
     const newMode = mode === 'light' ? 'dark' : 'light';
     setMode(newMode);
-    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/theme`, {
+    await fetch(`${url}/api/theme`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

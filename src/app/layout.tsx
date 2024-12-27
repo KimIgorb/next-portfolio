@@ -17,7 +17,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/theme`, {cache: 'no-store'});
+  const url = process.env.NEXT_PUBLIC_API_URL || 'https://next-portfolio-sigma-jade.vercel.app'
+  const response = await fetch(`${url}/api/theme`, {cache: 'no-store'});
   const theme = await response.json()
   
   return (

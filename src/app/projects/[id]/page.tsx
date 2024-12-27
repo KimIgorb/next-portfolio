@@ -6,10 +6,11 @@ import { Suspense } from "react"
 
 export default async function Project(props: { params: Promise<{ id: string }> }) {
 
+  const url = process.env.NEXT_PUBLIC_API_URL || 'https://next-portfolio-sigma-jade.vercel.app'
   const params = await props.params
   const id = params.id
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/projects/${id}`);
+  const response = await fetch(`${url}/api/projects/${id}`);
   const project:IProject = await response.json()
 
   return (

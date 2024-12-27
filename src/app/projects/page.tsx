@@ -6,8 +6,10 @@ import { IProject } from '../../UI/project-list'
 
 
 async function getProjects(): Promise<IProject[]> {
+
+  const url = process.env.NEXT_PUBLIC_API_URL || 'https://next-portfolio-sigma-jade.vercel.app'
   
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/projects`, {
+  const response = await fetch(`${url}/api/projects`, {
     cache: 'no-store'
   });
 
