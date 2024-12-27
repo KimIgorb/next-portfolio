@@ -4,7 +4,7 @@
 
 .dark-mode-btn {
   @apply order-9 relative flex justify-between w-[51px] h-[26px] p-[5px] rounded-[50px] dark:bg-[#272727] bg-slate-300;
-  @apply  before:absolute before:top-px before:left-px before:block before:w-6 before:h-6 before:rounded-full before:bg-white before:transition-all before:duration-200;
+  @apply before:absolute before:top-px before:left-px before:block before:w-6 before:h-6 before:rounded-full before:bg-white before:transition-all before:duration-200;
 }
 
 

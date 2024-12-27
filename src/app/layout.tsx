@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 
@@ -11,21 +11,15 @@ export const metadata: Metadata = {
   description: "Портфолио веб-разработчика с примерами проектов, навыками и контактной информацией."
 };
 
-async function getTheme() {
-  const response = await fetch('http://localhost:3000/api/theme')
-
-  return response.json()
-}
-
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
-  const theme = await getTheme()
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/theme`, {cache: 'no-store'});
+  const theme = await response.json()
   
-
   return (
     <html lang="en" className={theme.mode}>
       <body

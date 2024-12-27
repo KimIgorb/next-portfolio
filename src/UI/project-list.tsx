@@ -10,20 +10,12 @@ export interface IProject {
   github: string
 }
 
-async function getProjects():Promise<IProject[]> {
-  try {
-    const response = await fetch('http://localhost:3000/api/projects');
-
-    return response.json()
-  } catch (error) {
-    console.error(error)
-    return []
-  }
+interface IProps {
+  projects: IProject[]
 }
 
-export default async function ProjectsList() {
 
-  const projects = await getProjects()
+export default function ProjectsList({projects}: IProps) {
 
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -38,3 +30,4 @@ export default async function ProjectsList() {
     </ul>
   )
 }
+
