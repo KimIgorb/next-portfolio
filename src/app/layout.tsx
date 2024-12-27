@@ -20,6 +20,7 @@ export default async function RootLayout({
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/theme`, {cache: 'no-store'});
   const theme = await response.json()
   
+  
   return (
     <html lang="en" className={theme.mode}>
       <body
