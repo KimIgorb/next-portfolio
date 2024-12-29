@@ -3,9 +3,7 @@ import { prisma } from "../../../../prisma/prisma-client";
 
 export async function GET() {
   try {
-    const theme = await prisma.theme.findUnique({
-      where: { id: 1 },
-    });
+    const theme = await prisma.theme.findFirst();
 
     if (!theme) {
       return NextResponse.json({ error: "Theme not found" }, { status: 404 });
