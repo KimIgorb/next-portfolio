@@ -18,7 +18,7 @@ export default async function RootLayout({
 }>) {
 
   const url = process.env.NEXT_PUBLIC_API_URL || 'https://next-portfolio-sigma-jade.vercel.app'
-  const response = await fetch(`${url}/api/theme`, {cache: 'no-store'});
+  const response = await fetch(new URL('/api/theme', url).toString(), { cache: 'no-store' });
   const theme = await response.json()
   
   return (
