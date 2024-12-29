@@ -24,8 +24,8 @@ async function up() {
       {
         title: "Weather App",
         image_url: "/projects/project4.png",
-        skills: "Vue, Vuex, Axios",
-        github: "https://github.com/KimIgorb/weather-vue",
+        skills: "Next JS, TS, Tailwind CSS",
+        github: "https://github.com/KimIgorb/weather",
       },
     ],
   });
