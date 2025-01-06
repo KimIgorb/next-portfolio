@@ -4,10 +4,10 @@ async function up() {
   await prisma.projects.createMany({
     data: [
       {
-        title: "Blanchard",
+        title: "Recipes App",
         image_url: "/projects/project1.png",
-        skills: "HTML, CSS",
-        github: "https://github.com/KimIgorb/blanchard",
+        skills: "Next Js, TS, Tailwind CSS, Prisma",
+        github: "https://recipes-psi-six.vercel.app",
       },
       {
         title: "Orders Management",
